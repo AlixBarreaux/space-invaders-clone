@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Mechanisms/Edge Detector/Right Edge/RightEdgeDetector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Aliens/Reference.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Players/Player Base/player_sprite.tres" type="Texture" id=3]
+[ext_resource path="res://Entities/Aliens/Alien Group/AlienGroup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Buildings/building_atlas_resource.tres" type="Texture" id=6]
+[ext_resource path="res://Entities/Players/Player Base/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entities/Players/Player Controllers/Keyboard Wasd/PlayerControllerKeyboardWasd.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mechanisms/Edge Detector/Left Edge/LeftEdgeDetector.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mechanisms/Edge Detector/Bottom Edge/BottomEdgeDetector.gd" type="Script" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 387, 20 )
+
+[node name="ReferenceTest" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AlienDetectors" type="Node2D" parent="."]
+
+[node name="EdgeDetectors" type="Node2D" parent="AlienDetectors"]
+
+[node name="LeftSideEdgeDetector" parent="AlienDetectors/EdgeDetectors" instance=ExtResource( 11 )]
+position = Vector2( 59, 218 )
+
+[node name="BottomEdgeDetector" type="Area2D" parent="AlienDetectors/EdgeDetectors"]
+modulate = Color( 0.431373, 0, 0.698039, 1 )
+position = Vector2( 385, 222 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlienDetectors/EdgeDetectors/BottomEdgeDetector"]
+shape = SubResource( 1 )
+
+[node name="RightSideEdgeDetector" parent="AlienDetectors/EdgeDetectors" instance=ExtResource( 1 )]
+position = Vector2( 710, 218 )
+
+[node name="AlienGroup" parent="." instance=ExtResource( 4 )]
+position = Vector2( 59, 82 )
+
+[node name="Buildings" type="Node2D" parent="."]
+position = Vector2( 80, 472 )
+scale = Vector2( 4, 4 )
+
+[node name="Sprite" type="Sprite" parent="Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 11, 8 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 55, 8 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3" type="Sprite" parent="Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 99, 8 )
+texture = ExtResource( 6 )
+
+[node name="Sprite4" type="Sprite" parent="Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 143, 8 )
+texture = ExtResource( 6 )
+
+[node name="PlayerReferences" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2" type="Sprite" parent="PlayerReferences"]
+position = Vector2( 122, 544 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="PlayerReferences"]
+position = Vector2( 106, 576 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="PlayerReferences"]
+visible = false
+position = Vector2( 106, 620 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="PlayerReferences"]
+position = Vector2( 105, 652 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Sprite7" type="Sprite" parent="PlayerReferences"]
+position = Vector2( 156, 668 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 0, 670 )
+points = PoolVector2Array( 0, 0, 770, 0 )
+width = 4.0
+default_color = Color( 0.0784314, 1, 0, 1 )
+
+[node name="InfoLabelHorizontal" type="Label" parent="."]
+margin_left = 805.277
+margin_top = 297.003
+margin_right = 845.277
+margin_bottom = 311.003
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabelVertical" type="Label" parent="."]
+margin_left = 805.277
+margin_top = 364.592
+margin_right = 845.277
+margin_bottom = 378.592
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Players" type="Node2D" parent="."]
+position = Vector2( 92, 592 )
+
+[node name="Player" type="Sprite" parent="Players"]
+modulate = Color( 0.137255, 0.937255, 0, 1 )
+position = Vector2( 30, 16 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Player2" parent="Players" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 30.012, 15.8868 )
+
+[node name="PlayerControllerKeyboardWasd" parent="Players/Player2" instance=ExtResource( 8 )]
+
+[node name="MoveCooldown" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+[connection signal="area_shape_exited" from="AlienDetectors/EdgeDetectors/BottomEdgeDetector" to="AlienDetectors/EdgeDetectors/BottomEdgeDetector" method="_on_EdgeDetectorLeft_area_shape_exited"]

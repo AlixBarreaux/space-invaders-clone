@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Sound/fastinvader4.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Sound/fastinvader1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/fastinvader2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Mechanisms/Sound Playlist/MoveSoundPlaylist.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sound/fastinvader3.wav" type="AudioStream" id=5]
+
+[node name="MoveSoundPlaylist" type="Node"]
+script = ExtResource( 4 )
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="MoveSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="MoveSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="MoveSound4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )

@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Entities/Aliens/Alien Group/AlienGroup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Aliens/Reference.gd" type="Script" id=2]
+[ext_resource path="res://Mechanisms/Edge Detector/Bottom Edge REMAKE/BottomSideDetector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Arena/World.gd" type="Script" id=4]
+[ext_resource path="res://Entities/Buildings/building_atlas_resource.tres" type="Texture" id=5]
+[ext_resource path="res://GUI/Score/ScoreGUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mechanisms/Edge Detector/Right Edge/RightEdgeDetector.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mechanisms/Edge Detector/Left Edge/LeftEdgeDetector.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entities/Players/Player Base/Player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 387, 12 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 387 )
+
+[node name="World" type="Node"]
+script = ExtResource( 4 )
+player_packed_scene = ExtResource( 9 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="Players" type="Node2D" parent="Entities"]
+position = Vector2( 255, 622 )
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="Entities/Players"]
+
+[node name="PlayerSpawnPoint" type="Position2D" parent="Entities/Players/PlayerSpawnPoints"]
+position = Vector2( 122, 0 )
+
+[node name="PlayerSpawnPoint2" type="Position2D" parent="Entities/Players/PlayerSpawnPoints"]
+position = Vector2( 298, 0 )
+
+[node name="PlayerSpawnPoint3" type="Position2D" parent="Entities/Players/PlayerSpawnPoints"]
+position = Vector2( 474, 0 )
+
+[node name="PlayerSpawnPoint4" type="Position2D" parent="Entities/Players/PlayerSpawnPoints"]
+position = Vector2( 650, 0 )
+
+[node name="AlienGroup" parent="Entities" instance=ExtResource( 1 )]
+position = Vector2( 314, 112 )
+collision_mask = 64
+
+[node name="AlienDetectors" type="Node2D" parent="."]
+position = Vector2( 255, 0 )
+
+[node name="EdgeDetectors" type="Node2D" parent="AlienDetectors"]
+
+[node name="LeftSideEdgeDetector" parent="AlienDetectors/EdgeDetectors" instance=ExtResource( 8 )]
+position = Vector2( 59, 248 )
+collision_layer = 64
+collision_mask = 0
+
+[node name="RightSideEdgeDetector" parent="AlienDetectors/EdgeDetectors" instance=ExtResource( 7 )]
+position = Vector2( 710, 248 )
+collision_layer = 64
+collision_mask = 0
+
+[node name="BottomSideDetector" parent="AlienDetectors/EdgeDetectors" instance=ExtResource( 3 )]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 255, 700 )
+points = PoolVector2Array( 0, 0, 770, 0 )
+width = 4.0
+default_color = Color( 0.0784314, 1, 0, 1 )
+
+[node name="ReferenceTest" type="Node2D" parent="."]
+position = Vector2( 255, 0 )
+script = ExtResource( 2 )
+
+[node name="Buildings" type="Node2D" parent="ReferenceTest"]
+position = Vector2( 80, 502 )
+scale = Vector2( 4, 4 )
+
+[node name="Sprite" type="Sprite" parent="ReferenceTest/Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 11, 8 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="ReferenceTest/Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 55, 8 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="ReferenceTest/Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 99, 8 )
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="ReferenceTest/Buildings"]
+modulate = Color( 0.243137, 1, 0, 1 )
+position = Vector2( 143, 8 )
+texture = ExtResource( 5 )
+
+[node name="ArenaBoundaries" type="Node" parent="."]
+
+[node name="BoundaryTop" type="StaticBody2D" parent="ArenaBoundaries"]
+position = Vector2( 641, -12 )
+collision_layer = 32
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaBoundaries/BoundaryTop"]
+shape = SubResource( 1 )
+
+[node name="BoundaryBottom" type="StaticBody2D" parent="ArenaBoundaries"]
+position = Vector2( 641, 732 )
+collision_layer = 32
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaBoundaries/BoundaryBottom"]
+shape = SubResource( 1 )
+
+[node name="BoundaryLeft" type="StaticBody2D" parent="ArenaBoundaries"]
+position = Vector2( 244, 359 )
+collision_layer = 32
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaBoundaries/BoundaryLeft"]
+shape = SubResource( 2 )
+
+[node name="BoundaryRight" type="StaticBody2D" parent="ArenaBoundaries"]
+position = Vector2( 1035, 359 )
+collision_layer = 32
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaBoundaries/BoundaryRight"]
+shape = SubResource( 2 )
+
+[node name="ScoreGUI" parent="." instance=ExtResource( 6 )]

@@ -1,0 +1,237 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Font_SFPixelate.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/Main_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Fonts/Font_SFPixelate_Size_70.tres" type="DynamicFont" id=4]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -215.0
+margin_top = 107.0
+margin_right = 216.0
+margin_bottom = -107.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuPlay" type="Button" parent="MainMenuButtons"]
+margin_top = 107.0
+margin_right = 431.0
+margin_bottom = 171.0
+custom_fonts/font = ExtResource( 4 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="MainMenuButtons"]
+margin_top = 221.0
+margin_right = 431.0
+margin_bottom = 285.0
+custom_fonts/font = ExtResource( 4 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="MainMenuButtons"]
+margin_top = 335.0
+margin_right = 431.0
+margin_bottom = 399.0
+custom_fonts/font = ExtResource( 4 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lobby" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LobbyContainer" type="Control" parent="Lobby"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -175.0
+margin_right = 300.0
+margin_bottom = 175.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PlayerOne" type="Button" parent="Lobby/LobbyContainer"]
+margin_right = 256.0
+margin_bottom = 99.0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
+text = "Player 1"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerTwo" type="Button" parent="Lobby/LobbyContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -256.0
+margin_bottom = 99.0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
+text = "Player 2"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerThree" type="Button" parent="Lobby/LobbyContainer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -99.0
+margin_right = 256.0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
+text = "Player 3"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerFour" type="Button" parent="Lobby/LobbyContainer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -256.0
+margin_top = -99.0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
+text = "Player 4"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LaunchGame" type="Button" parent="Lobby/LobbyContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -49.5
+margin_right = 128.0
+margin_bottom = 49.5
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
+text = "PLAY!"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LobbyBackToMenu" type="Button" parent="Lobby"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -235.0
+margin_top = -70.0
+margin_right = 235.0
+theme = ExtResource( 3 )
+text = "Back to menu"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="High_Score" type="Label" parent="HBoxContainer"]
+margin_top = 26.0
+margin_right = 201.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+text = "High Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsMenu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Change_Key_Bindings" type="Button" parent="OptionsMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -184.5
+margin_top = -13.5
+margin_right = 184.5
+margin_bottom = 13.5
+text = "Change Key Bindings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsBackToMenu" type="Button" parent="OptionsMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -184.5
+margin_top = -27.0
+margin_right = 184.5
+text = "Back to menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Free_Device_Timers" type="Node" parent="."]
+
+[node name="JoypadZeroTimer" type="Timer" parent="Free_Device_Timers"]
+wait_time = 3.0
+one_shot = true
+[connection signal="pressed" from="MainMenuButtons/MainMenuPlay" to="." method="_on_MainMenuPlay_pressed"]
+[connection signal="pressed" from="MainMenuButtons/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MainMenuButtons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Lobby/LobbyContainer/PlayerOne" to="." method="_on_Player_One_Button_pressed"]
+[connection signal="pressed" from="Lobby/LobbyContainer/LaunchGame" to="." method="_on_LaunchGame_pressed"]
+[connection signal="pressed" from="Lobby/LobbyBackToMenu" to="." method="_on_BackToMenu_pressed"]
+[connection signal="pressed" from="OptionsMenu/OptionsBackToMenu" to="." method="_on_OptionsBackToMenu_pressed"]
+[connection signal="timeout" from="Free_Device_Timers/JoypadZeroTimer" to="." method="_on_JoypadZeroTimer_timeout"]

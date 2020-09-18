@@ -1,0 +1,502 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Entities/Aliens/Alien Group/AlienGroup.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Aliens/Squid/Squid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Aliens/Crab/Crab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Aliens/Octopus/Octopus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mechanisms/Sound Playlist/MoveSoundPlaylist.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Projectiles/Projectiles Aliens/ProjectileAlien.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 81, 38 )
+
+[node name="AlienGroup" type="Area2D"]
+scale = Vector2( 4, 4 )
+collision_layer = 0
+collision_mask = 32
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+timer_speed_factor = 0.7
+
+[node name="AlienGroupZone" type="CollisionShape2D" parent="."]
+self_modulate = Color( 0.317647, 0.352941, 0.745098, 1 )
+position = Vector2( 81, 35 )
+shape = SubResource( 1 )
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Line" type="Node2D" parent="Lines"]
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Slot" type="Position2D" parent="Lines/Line"]
+position = Vector2( 24, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot2" type="Position2D" parent="Lines/Line"]
+position = Vector2( 84, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot2" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot3" type="Position2D" parent="Lines/Line"]
+position = Vector2( 144, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot3" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot4" type="Position2D" parent="Lines/Line"]
+position = Vector2( 204, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot4" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot5" type="Position2D" parent="Lines/Line"]
+position = Vector2( 264, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot5" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot6" type="Position2D" parent="Lines/Line"]
+position = Vector2( 324, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot6" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot7" type="Position2D" parent="Lines/Line"]
+position = Vector2( 384, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot7" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot8" type="Position2D" parent="Lines/Line"]
+position = Vector2( 444, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot8" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot9" type="Position2D" parent="Lines/Line"]
+position = Vector2( 504, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot9" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot10" type="Position2D" parent="Lines/Line"]
+position = Vector2( 564, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot10" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot11" type="Position2D" parent="Lines/Line"]
+position = Vector2( 624, 4 )
+
+[node name="Squid" parent="Lines/Line/Slot11" instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Line2" type="Node2D" parent="Lines"]
+position = Vector2( 0, 17 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Slot" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 24, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot2" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 84, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot2" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot3" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 144, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot3" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot4" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 204, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot4" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot5" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 264, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot5" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot6" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 324, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot6" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot7" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 384, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot7" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot8" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 444, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot8" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot9" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 504, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot9" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot10" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 564, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot10" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot11" type="Position2D" parent="Lines/Line2"]
+position = Vector2( 624, 4 )
+
+[node name="Crab" parent="Lines/Line2/Slot11" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Line3" type="Node2D" parent="Lines"]
+position = Vector2( 0, 34 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Slot" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 24, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot2" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 84, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot2" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot3" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 144, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot3" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot4" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 204, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot4" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot5" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 264, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot5" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot6" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 324, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot6" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot7" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 384, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot7" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot8" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 444, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot8" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot9" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 504, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot9" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot10" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 564, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot10" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Slot11" type="Position2D" parent="Lines/Line3"]
+position = Vector2( 624, 4 )
+
+[node name="Crab" parent="Lines/Line3/Slot11" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+collision_mask = 4
+
+[node name="Line4" type="Node2D" parent="Lines"]
+position = Vector2( 0, 51 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Slot" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 24, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot2" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 84, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot2" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot3" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 144, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot3" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot4" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 204, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot4" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot5" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 264, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot5" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot6" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 324, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot6" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot7" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 384, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot7" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot8" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 444, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot8" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot9" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 504, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot9" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot10" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 564, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot10" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot11" type="Position2D" parent="Lines/Line4"]
+position = Vector2( 624, 4 )
+
+[node name="Octopus" parent="Lines/Line4/Slot11" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Line5" type="Node2D" parent="Lines"]
+position = Vector2( 0, 68 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Slot" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 24, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot2" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 84, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot2" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot3" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 144, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot3" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot4" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 204, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot4" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot5" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 264, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot5" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot6" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 324, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot6" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot7" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 384, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot7" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot8" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 444, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot8" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot9" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 504, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot9" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot10" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 564, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot10" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="Slot11" type="Position2D" parent="Lines/Line5"]
+position = Vector2( 624, 4 )
+
+[node name="Octopus" parent="Lines/Line5/Slot11" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="MoveSoundPlaylist" parent="." instance=ExtResource( 5 )]
+
+[node name="MoveCoolDownTimer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[node name="AlienProjectilesContainer" type="Node" parent="."]
+
+[node name="ProjectileAlien" parent="AlienProjectilesContainer" instance=ExtResource( 6 )]
+scale = Vector2( 4, 4 )
+collision_mask = 33
+
+[node name="ProjectileAlien2" parent="AlienProjectilesContainer" instance=ExtResource( 6 )]
+scale = Vector2( 4, 4 )
+
+[node name="ProjectileAlien3" parent="AlienProjectilesContainer" instance=ExtResource( 6 )]
+scale = Vector2( 4, 4 )
+
+[node name="ProjectileAlien4" parent="AlienProjectilesContainer" instance=ExtResource( 6 )]
+scale = Vector2( 4, 4 )
+
+[node name="SpawnProjectileTimers" type="Node" parent="."]
+
+[node name="SpawnProjectileTimer" type="Timer" parent="SpawnProjectileTimers"]
+
+[node name="SpawnProjectileTimer2" type="Timer" parent="SpawnProjectileTimers"]
+
+[node name="SpawnProjectileTimer3" type="Timer" parent="SpawnProjectileTimers"]
+
+[node name="SpawnProjectileTimer4" type="Timer" parent="SpawnProjectileTimers"]
+[connection signal="body_entered" from="Lines/Line/Slot/Squid" to="Lines/Line/Slot/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot2/Squid" to="Lines/Line/Slot2/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot3/Squid" to="Lines/Line/Slot3/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot4/Squid" to="Lines/Line/Slot4/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot5/Squid" to="Lines/Line/Slot5/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot6/Squid" to="Lines/Line/Slot6/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot7/Squid" to="Lines/Line/Slot7/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot8/Squid" to="Lines/Line/Slot8/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot9/Squid" to="Lines/Line/Slot9/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot10/Squid" to="Lines/Line/Slot10/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line/Slot11/Squid" to="Lines/Line/Slot11/Squid" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot/Crab" to="Lines/Line2/Slot/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot2/Crab" to="Lines/Line2/Slot2/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot3/Crab" to="Lines/Line2/Slot3/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot4/Crab" to="Lines/Line2/Slot4/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot5/Crab" to="Lines/Line2/Slot5/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot6/Crab" to="Lines/Line2/Slot6/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot7/Crab" to="Lines/Line2/Slot7/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot8/Crab" to="Lines/Line2/Slot8/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot9/Crab" to="Lines/Line2/Slot9/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot10/Crab" to="Lines/Line2/Slot10/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line2/Slot11/Crab" to="Lines/Line2/Slot11/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot/Crab" to="Lines/Line3/Slot/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot2/Crab" to="Lines/Line3/Slot2/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot3/Crab" to="Lines/Line3/Slot3/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot4/Crab" to="Lines/Line3/Slot4/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot5/Crab" to="Lines/Line3/Slot5/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot6/Crab" to="Lines/Line3/Slot6/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot7/Crab" to="Lines/Line3/Slot7/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot8/Crab" to="Lines/Line3/Slot8/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot9/Crab" to="Lines/Line3/Slot9/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot10/Crab" to="Lines/Line3/Slot10/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line3/Slot11/Crab" to="Lines/Line3/Slot11/Crab" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot/Octopus" to="Lines/Line4/Slot/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot2/Octopus" to="Lines/Line4/Slot2/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot3/Octopus" to="Lines/Line4/Slot3/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot4/Octopus" to="Lines/Line4/Slot4/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot5/Octopus" to="Lines/Line4/Slot5/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot6/Octopus" to="Lines/Line4/Slot6/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot7/Octopus" to="Lines/Line4/Slot7/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot8/Octopus" to="Lines/Line4/Slot8/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot9/Octopus" to="Lines/Line4/Slot9/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot10/Octopus" to="Lines/Line4/Slot10/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line4/Slot11/Octopus" to="Lines/Line4/Slot11/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot/Octopus" to="Lines/Line5/Slot/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot2/Octopus" to="Lines/Line5/Slot2/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot3/Octopus" to="Lines/Line5/Slot3/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot4/Octopus" to="Lines/Line5/Slot4/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot5/Octopus" to="Lines/Line5/Slot5/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot6/Octopus" to="Lines/Line5/Slot6/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot7/Octopus" to="Lines/Line5/Slot7/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot8/Octopus" to="Lines/Line5/Slot8/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot9/Octopus" to="Lines/Line5/Slot9/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot10/Octopus" to="Lines/Line5/Slot10/Octopus" method="_on_Alien_body_entered"]
+[connection signal="body_entered" from="Lines/Line5/Slot11/Octopus" to="Lines/Line5/Slot11/Octopus" method="_on_Alien_body_entered"]
+[connection signal="timeout" from="MoveCoolDownTimer" to="." method="_on_MoveCoolDownTimer_timeout"]
+[connection signal="timeout" from="SpawnProjectileTimers/SpawnProjectileTimer" to="." method="_on_SpawnProjectileTimer_timeout"]
+[connection signal="timeout" from="SpawnProjectileTimers/SpawnProjectileTimer2" to="." method="_on_SpawnProjectileTimer2_timeout"]
+[connection signal="timeout" from="SpawnProjectileTimers/SpawnProjectileTimer3" to="." method="_on_SpawnProjectileTimer3_timeout"]
+[connection signal="timeout" from="SpawnProjectileTimers/SpawnProjectileTimer4" to="." method="_on_SpawnProjectileTimer4_timeout"]
