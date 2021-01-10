@@ -63,8 +63,8 @@ config/version="Alpha 1"
 
 [autoload]
 
-GameConfig="*res://Singletons Autoload/game_config.gd"
-Events="*res://Singletons Autoload/Events.gd"
+GameConfig="*res://Singletons/game_config.gd"
+Events="*res://Singletons/Events.gd"
 
 [display]
 

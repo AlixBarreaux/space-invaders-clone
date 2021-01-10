@@ -16,7 +16,7 @@ var button_list : Array = []
 func _ready() -> void:
 	initialize_button_list()
 
-func _input(event) -> void:
+func _input(_event: InputEvent) -> void:
 #	main_menu_button_list[0].grab_focus()
 
 	if Input.is_action_just_pressed("move_down_keyboard_wasd"):
