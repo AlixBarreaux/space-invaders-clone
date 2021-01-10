@@ -42,10 +42,10 @@ var are_guests_inputs_enabled : bool = false
 func _ready() -> void:
 	disable_node(lobby_container)
 	disable_node(options_menu)
-	pass
+	play_main_menu_button.grab_focus()
 
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta: float) -> void:
 	if are_guests_inputs_enabled:
 		get_guests_inputs()
 
@@ -173,21 +173,21 @@ func check_if_player_created(id : int) -> void:
 		check_if_all_players_ready()
 
 
-func create_player(id : int) -> void:
+func create_player(id: int) -> void:
 	id -= 1
 	GameConfig.player_list[GameConfig.player_list.keys()[id]]["is_created"] = true
 	print("Player ", id + 1, " created!")
 	check_if_all_players_ready()
 
 
-func remove_player(id : int) -> void:
+func remove_player(id: int) -> void:
 	id -= 1
 	GameConfig.player_list[GameConfig.player_list.keys()[id]]["is_created"] = false
 	GameConfig.player_list[GameConfig.player_list.keys()[id]]["is_ready"] = false
 	print("Player ", id + 1, " removed!")
 
 
-func toggle_player_ready_state(id : int) -> void:
+func toggle_player_ready_state(id: int) -> void:
 	id -= 1
 	if not GameConfig.player_list[GameConfig.player_list.keys()[id]]["is_ready"]:
 		print("Player ", id + 1, " State: Ready!")
@@ -209,6 +209,7 @@ func remove_all_players() -> void:
 	remove_player(0)
 	remove_all_guest_players()
 
+
 # Main Menu Buttons signals
 func _on_MainMenuPlay_pressed() -> void:
 	disable_node(main_menu_buttons)
@@ -224,6 +225,8 @@ func _on_Options_pressed() -> void:
 	disable_node(main_menu_buttons)
 	main_menu_buttons.hide()
 	enable_node(options_menu)
+	$OptionsMenu/Change_Key_Bindings.disabled = true
+	options_menu_back_to_menu.grab_focus()
 	options_menu.show()
 
 
@@ -256,6 +259,7 @@ func _on_OptionsBackToMenu_pressed() -> void:
 	options_menu.hide()
 	main_menu_buttons.show()
 	enable_node(main_menu_buttons)
+	$MainMenuButtons/MainMenuPlay.grab_focus()
 #func _input(event):
 ##	main_menu_button_list[0].grab_focus()
 #
