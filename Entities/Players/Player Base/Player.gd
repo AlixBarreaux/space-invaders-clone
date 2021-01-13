@@ -130,7 +130,7 @@ func enable_projectiles_collisions() -> void:
 	self.set_modulate("ffffff")
 
 
-func _on_Hitbox_area_shape_entered(area_id, area : Area2D, area_shape, self_shape) -> void:
+func _on_Hitbox_area_shape_entered(area_id: int, area: Area2D, area_shape, self_shape) -> void:
 	if self.is_dead == false:
 		# Disable the alien projectile
 		if not area.name == "Hitbox":

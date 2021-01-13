@@ -15,4 +15,4 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = ExtResource( 2 )
-animation = "move_default"
+animation = "move"

@@ -65,6 +65,7 @@ func check_remaining_players() -> void:
 	
 	if players_remaining == 0:
 		print("GAME OVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER!!!!")
+		$GameOverContainer/GameOverButtons/MainMenu.grab_focus()
 		Events.emit_signal("game_over")
 	else:
 		players_remaining -= 1
